@@ -26,6 +26,7 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
+# Test code for Git
 
 
 gem 'sdoc', '~> 0.4.0',          group: :doc

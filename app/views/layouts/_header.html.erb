@@ -1,5 +1,5 @@
-	<nav class="navbar navbar navbar-default" role="navigation">
-    <div class="container">
+<nav class="navbar navbar navbar-default" role="navigation">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -14,9 +14,21 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+          
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About", about_path %></li>
+          
+          <% if user_signed_in? %><!-- Checks if a user is signed in & shows log out button at top left -->
+
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          
+          <% else %><!-- If not signed in, shows a sign in button at top left. -->
+
+          <li><%= link_to "Sign in", new_user_session_path %>
+          
+          <% end %>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
-    </div> <!-- end of container class -->
+  </div> <!-- end of container class -->
 </nav>

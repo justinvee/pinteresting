@@ -21,7 +21,7 @@
           <% if user_signed_in? %><!-- Checks if a user is signed in & shows log out button at top left -->
 
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          
+          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <% else %><!-- If not signed in, shows a sign in button at top left. -->
 
           <li><%= link_to "Sign in", new_user_session_path %>

@@ -5,7 +5,7 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show] # Enables authentication for when you're creating a new pin, except when looking at pin or index page. 
 
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order(created_at: :desc) # Orders the pins by created_at
   end
 
   def show

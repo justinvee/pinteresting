@@ -6,7 +6,7 @@
         <%= link_to image_tag(pin.image.url(:medium)), pin %>
         <div class="panel-body">
             <%= pin.description %><br/>
-            <strong><%= pin.user.email if pin.user %> </strong> <%# Only pulls if there is a user associated with the pin. %>
+            <strong><%= pin.user.name if pin.user %> </strong> <%# Only pulls if there is a user associated with the pin. %>
 
             <% if pin.user == current_user %>
               <div class="actions">
